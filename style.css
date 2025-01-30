@@ -1,0 +1,38 @@
+:root {
+    background-image: url(./ginastica.avif);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--imagem-fundo);
+    transition: 1s;
+}
+
+#imagem{
+    padding: 8px 12px;
+    font-size: 24px;
+    
+    
+}
+
+#trocar-imagem {
+    padding: 8px 12px;
+    font-size: 24px;
+    cursor: pointer;
+}
