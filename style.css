@@ -1,38 +1,29 @@
 :root {
-    background-image: url(./ginastica.avif);
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    
+    --imagem-fundo: url('./img/futebol.webp'); 
 }
 
-
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-
-body{
+body {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--imagem-fundo);
+    background: var(--imagem-fundo)no-repeat center center/cover;
     transition: 1s;
 }
 
-#imagem{
+
+#esporte {
     padding: 8px 12px;
-    font-size: 24px;
-    
-    
+    font-size: 22px;
 }
 
 #trocar-imagem {
     padding: 8px 12px;
     font-size: 24px;
-    cursor: pointer;
 }

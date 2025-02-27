@@ -1,13 +1,35 @@
-"use strict"
+"use strict";
 
-//const criando variavel
-// o . significa para acessar tal elemendo e () ao como chama 
-const botaoTrocarImagem = document.getElementById('trocar-imagem')
+const botaoTrocarImagem = document.getElementById("trocar-imagem");
+const inputEsporte = document.getElementById("esporte");
 
-//function manda o que fazer 
-function trocarImagem (){
-    const imagem = document.getElementById('imagem') . value
-    document.documentElement.style.setProperty ('--imagem-fundo', imagem )
+const esportes = {
+    "skate": "./img/skate.jpg",
+    "natacao": "./img/natacao02.webp",
+    "futebol": "./img/futebol.webp",
+    "ginastica": "./img/ginastica.avif",
+    "atletismo": "./img/atletismo.avif",
+};
 
+// Função para trocar a imagem 
+function trocarImagemPorNome() {
+    const esporteDigitado = inputEsporte.value.toLowerCase().trim(); 
+    if (esportes[esporteDigitado]) {
+        document.documentElement.style.setProperty("--imagem-fundo", `url('${esportes[esporteDigitado]}')`);
+    } else {
+        alert("Esporte não encontrado!");
+    }
 }
-botaoTrocarImagem.addEventListener('click', trocarImagem)
+
+function trocarImagemAleatoria() {
+    const nomesEsportes = Object.keys(esportes);
+    const esporteAleatorio = nomesEsportes[Math.floor(Math.random() * nomesEsportes.length)];
+    document.documentElement.style.setProperty("--imagem-fundo", `url('${esportes[esporteAleatorio]}')`);
+}
+
+inputEsporte.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        trocarImagemPorNome();
+    }
+});
+botaoTrocarImagem.addEventListener("click", trocarImagemAleatoria);
